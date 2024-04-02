@@ -1,0 +1,17 @@
+class parent():
+    def a(self):
+        global n
+        n=int(input())
+class child():
+    def b(self):
+        global n1
+        n1=int(input())
+class child1(parent,child):
+    def c(self):
+        s=n+n1
+        print(s)
+obj=child1()
+obj.a()
+obj.b()
+obj.c()
+        

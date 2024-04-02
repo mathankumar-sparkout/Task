@@ -1,0 +1,13 @@
+class parent():
+    def bird(self):
+        print("bird sound")
+class child1(parent):
+    def dog(self):
+        print("dog sound")
+class child2(child1):
+    def cat(self):
+        print("cat sound")
+obj=child2()
+obj.bird()
+obj.dog()
+obj.cat()

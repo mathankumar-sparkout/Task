@@ -1,0 +1,13 @@
+class parent():
+    def detail(self):
+        global a,b
+        a=int(input())
+        b=int(input())
+
+class child(parent):
+    def add(self):
+        c=a+b
+        print(c)
+obj=child()
+obj.detail()
+obj.add()
