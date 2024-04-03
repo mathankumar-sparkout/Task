@@ -7,7 +7,7 @@ for i in range(1,11):
 
 for word in "hello word":
     if(word =='w'):
-        break     # only excute hello words
+        break     # only excute hello 
     print(word) 
 
 
