@@ -5,9 +5,9 @@ for i in range(1,11):
     print("bye",i)
 
 
-for word in "hello word":
-    if(word =='w'):
+for i in "hello word":
+    if(i =='w'):
         break     # only excute hello 
-    print(word) 
+    print(i) 
 
 

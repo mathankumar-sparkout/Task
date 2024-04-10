@@ -11,7 +11,7 @@ class number():
         return x
 obj=number()
 it=iter(obj)
-print(next(it))  #-> first value print 
+print(next(it))  #-> first value print  
 print(next(it))  #-> second value print
 
 

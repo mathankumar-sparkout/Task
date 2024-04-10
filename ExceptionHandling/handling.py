@@ -13,7 +13,7 @@ try:
 
     print(c)
 except ZeroDivisionError as e:
-    print("Zero division error",e)
+    print("Zero division error",e )
 
 # try multiple except---------------------------------------------------------------------------------
 try:
