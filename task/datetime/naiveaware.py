@@ -2,12 +2,12 @@
 from datetime import datetime
 import pytz              #->python time zone
 
-#get the current datetime
+# current datetime
 
 unaware_object=datetime.now()
 print('timezone naive:',unaware_object)
 
-#standard UTC timezone
+# UTC timezone
 
 aware_object=datetime.now(pytz.utc)
 print('timezone aware:',aware_object)
