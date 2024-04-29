@@ -24,3 +24,9 @@ class a(BaseModel):
 @app.post("/")
 def fun(a: a):
     return a
+
+
+
+
+
+
