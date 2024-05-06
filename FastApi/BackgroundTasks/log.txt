@@ -1,1 +1,1 @@
-notifications:some notification
+notificationmathan@gmail.com:some notification
