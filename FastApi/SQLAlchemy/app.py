@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Session=sessionmaker(bind=engine)
 session=Session()
-'''use=alchemy(id=1,name="john",age=24)  #user is a primary key 
+'''use=alchemy(id=1,name="john",age=24)  #use is a primary key 
 use_2=alchemy(id=2,name="Arun",age=50)
 use_3=alchemy(id=3,name="Kumar",age=60)
 use_4=alchemy(id=4,name="Raj",age=24)
