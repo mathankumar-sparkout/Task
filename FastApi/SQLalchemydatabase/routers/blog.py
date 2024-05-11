@@ -9,7 +9,7 @@ router = APIRouter(
     # prefix='/blogs'-> change the names
 )
 
-get_db = database.get_db
+get_db = database.get_db 
 
 
 @router.get("/get_blog", response_model=List[schemas.show_Blog])

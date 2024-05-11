@@ -22,8 +22,8 @@ def create_user(request: schemas.User, db: Session = Depends(get_db)):
         email=request.email,
         password=hashing.hash.bcrypt(request.password),
     )
-    db.add(new_user)
-    db.commit()
+    db.add(new_user) 
+    db.commit() 
     db.refresh(new_user)
     return new_user
 
