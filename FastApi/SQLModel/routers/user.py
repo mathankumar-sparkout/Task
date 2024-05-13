@@ -4,15 +4,12 @@ from typing import List,Union
 from sqlmodel import Session,select
 from models import User
 from database import engine
+from pydantic import EmailStr
 
 
 router = APIRouter(tags=["User"])
 
 get_db = database.get_db
-
-
-
-
 
 
 #get all user data----
@@ -26,16 +23,18 @@ def get_user(db: Session = Depends(get_db)):
     
 # get single user data------
 
-@router.get("/get_user/{id}",response_model=Union[models.User,str])
+@router.get("/get_user/{id}",response_model=Union[models.User,str],status_code=status.HTTP_200_OK)
 def get_single_user(id :int,response:Response,db: Session = Depends(get_db)):
         user=db.get(models.User, id)
         if user is None:
-            response.status_code=404
-            return {f"none{id}"}
-        #result=jsonable_encoder(models.User)
+            raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"USER with the id {id} is not available"
+            )
         return user
     
 
+#post 
 @router.post("/post_user",response_model=models.User,status_code=201)
 # only we want name and password use this reponse_model
 def create_user(request: models.User, db: Session = Depends(get_db)):
@@ -50,8 +49,9 @@ def update_user(id:int,update_user:models.User,response:Response,db:Session=Depe
   
     
     if user is None:
-        response.status_code=404
-        return "User not found"
+        raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND, detail=f"USER with id {id} not found"
+        )
     #user_dict= {"name": update_user.name, "email": update_user.email, "password": update_user.password}
     user_dict=update_user.dict(exclude_unset=True)
     for key,val in user_dict.items():
@@ -62,12 +62,12 @@ def update_user(id:int,update_user:models.User,response:Response,db:Session=Depe
     return user
 
 
-@router.delete("/delete user/{id}")
+@router.delete("/delete user/{id}",status_code=status.HTTP_202_ACCEPTED,)
 def delete_user(id:int,response:Response,db:Session=Depends(get_db)):
     user=db.get(models.User,id)
     if user is None:
         response.status_code=404
-        return {"not found"}
+        return {"successfully deleted"}
     db.delete(user)
     db.commit()
     return Response(status_code=200)
