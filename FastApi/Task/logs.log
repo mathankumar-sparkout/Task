@@ -1,0 +1,13 @@
+2024-05-16 15:47:33,478-INFO-added the User
+2024-05-16 15:47:41,863-ERROR-already used this user id
+2024-05-16 15:48:05,072-INFO-show successfuly user!
+2024-05-16 15:48:07,748-INFO-show successfuly user!
+2024-05-16 15:48:28,005-WARNING-user id not in user_dictionary
+2024-05-16 15:48:54,383-INFO-update successfuly user!
+2024-05-16 15:49:07,692-INFO-deleted successfuly user!
+2024-05-16 15:49:32,517-INFO-added the Admin
+2024-05-16 15:49:35,212-ERROR-already used this user id
+2024-05-16 15:49:44,473-INFO-show successfuly admin!
+2024-05-16 15:49:59,843-WARNING-id not in admin_dictionary
+2024-05-16 15:50:25,542-INFO-update successfuly Admin!
+2024-05-16 15:50:34,375-INFO-deleted successfuly Admin!
