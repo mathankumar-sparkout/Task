@@ -38,3 +38,9 @@ user = {  # -> craete dictionary user
 @app.get("/use/{ids}")  # -> create root use {ids 1,2,3}
 async def fun(ids: int):  # -> type int
     return user[ids]  # -> return dictionary id
+
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.2", port=7000)

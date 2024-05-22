@@ -3,6 +3,9 @@ import time
 from fastapi import FastAPI, Request
 
 app = FastAPI()
+@app.get("/get_method/{id}")
+async def fun(id:int):
+    return id
 
 
 @app.middleware("http")

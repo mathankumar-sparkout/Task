@@ -6,7 +6,7 @@ from typing import Union  # -> union use quary parameter
 
 app = FastAPI()
 
-
+Union[str, int] or int | str
 @app.get(
     "/root/{p_id}"
 )  # -> path parameter(p_id) #->quary parameter no need to mention path parameter side

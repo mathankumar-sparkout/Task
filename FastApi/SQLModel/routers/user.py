@@ -11,9 +11,9 @@ get_db = database.get_db
 
 
 
-@router.get("/get_all_user",response_model=List[models.User],status_code=status.HTTP_200_OK)
+@router.get("/get_all_user",response_model=List[User],status_code=status.HTTP_200_OK)
 def get_user(session: Session = Depends(get_db)):
-    user=session.exec(select(models.User)).all()
+    user=session.exec(select(User)).all()
     return user
     
     

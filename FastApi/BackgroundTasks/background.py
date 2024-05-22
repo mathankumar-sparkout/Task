@@ -10,7 +10,7 @@ def fun(email:str,message=""):
         time.sleep(5) 
         email_file.write(content)
         
-@app.post("/notification/{emil}") # path parameter
+@app.post("/notification/{emil}")  # path parameter
 async def notifi(email :str,background:BackgroundTasks): # background query parameter
     background.add_task(fun,email,message="some notification") # add the function (message:return log.txt)
     return{"message":"Notification send in the background"} # return msg

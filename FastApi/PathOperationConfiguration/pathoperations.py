@@ -13,12 +13,9 @@ class Item(BaseModel):  #basemodel
     tags: set[str] = set() #set
 
 
-@app.post("/items", response_model=Item, status_code=status.HTTP_201_CREATED,tags=["Item"],summary="create a items") #status_code 201 successfully message in 201
-async def fun(item: Item): # request|class(Item)
-    return item #return item
-
-@app.get("/root",tags=["User"])
-async def fun():
+@app.post("/items", response_model=Item, status_code=status.HTTP_201_CREATED,tags=["Item"],summary="create a items",description="Create an item with all the information",response_description="The created item",
+) #status_code 201 successfully message in 201
+async def fun(item: Item):# request|class(Item)
     """
     Create an item with all the information:
 
@@ -28,4 +25,13 @@ async def fun():
     - **tax**: if the item doesn't have tax, you can omit this
     - **tags**: a set of unique tag strings for this item
     """
+    return item #return item
+
+@app.get("/get_items",tags=["Item"])
+async def get_items():
+    pass
+
+@app.get("/root",tags=["User"], deprecated=True)
+async def fun():
+  
     return{"name":"python"}
